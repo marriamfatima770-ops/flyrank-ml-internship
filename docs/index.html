@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capstone Report — Ranking Signal Analysis</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 25px;
+      line-height: 1.7;
+      color: #222;
+    }
+
+    h1 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 12px;
+    }
+
+    h2 {
+      margin-top: 35px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 6px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #f5f5f5;
+    }
+
+    code {
+      background: #f3f3f3;
+      padding: 3px 6px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background: #f3f3f3;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Capstone Report — Ranking Signal Analysis</h1>
+
+<p><strong>Author:</strong> Marriam Fatima</p>
+<p><strong>Lane:</strong> Ranking Signal Analysis</p>
+<p><strong>Repo:</strong> FlyRank ML Internship repository</p>
+<p><strong>Date:</strong> September 2026</p>
+
+<h2>0. Abstract</h2>
+
+<p>
+This study examines which safe search-performance signals are associated with click-through rate (CTR) in the FlyRank ML Internship dataset. The analysis uses 30,000 page-level observations and focuses on measurable content and search-related signals. Exploratory analysis was combined with a Random Forest regression model and a simple median-CTR baseline. The baseline achieved an MAE of 0.511, while the Random Forest achieved an MAE of 0.714, so the baseline performed better on the validation split. The output is therefore used as directional, decision-support evidence for prioritizing content signals for further review rather than as a guaranteed prediction of search performance.
+</p>
+
+<h2>1. Problem framing</h2>
+
+<p>The decision supported by this work is which measurable search-performance signals should receive priority during content and SEO review.</p>
+
+<p>The unit of analysis is the individual content item/page. The main output is a ranked set of signals based on exploratory evidence and model feature importance.</p>
+
+<p>Content and SEO teams can use these findings to identify pages or characteristics that deserve further investigation and optimization.</p>
+
+<p>A wrong recommendation could waste time and resources on low-potential pages while higher-potential opportunities are overlooked.</p>
+
+<p>Machine learning helps provide a consistent way to compare several measurable signals, but the results remain decision-support evidence and do not replace human judgment.</p>
+
+<h2>2. Data safety</h2>
+
+<p>This study uses the anonymized FlyRank ML Internship dataset containing 30,000 rows and 44 columns.</p>
+
+<p>The analysis focuses on safe, aggregated page-level information. Pseudonymous content and client IDs were not used as model features. They are treated only as identifiers for grouping or validation purposes.</p>
+
+<p>The selected model features were:</p>
+
+<ul>
+<li>search_volume</li>
+<li>competition</li>
+<li>cpc</li>
+<li>word_count</li>
+<li>char_count</li>
+<li>content_age_days</li>
+<li>days_since_last_update</li>
+</ul>
+
+<p>CTR was used as the target.</p>
+
+<p>Fields that could create leakage or ambiguous interpretation, including clicks, impressions, trend_direction, trend_pct, and other target-derived performance fields, were not used as predictive features
