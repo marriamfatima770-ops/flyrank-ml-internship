@@ -1,12 +1,4 @@
-# Capstone Report — <your lane>
-
-- **Author:**
-- **Lane:**
-- **Repo:**
-- **Date:**
-
-> Copy this file to `work/capstone_report.md` and fill it in as you build. Sections 1–8
-> mirror the Pass / Needs-Work rubric axes, so nothing here is optional. Sections 0 and 9
+ here is optional. Sections 0 and 9
 > are **paper sections**: your deployed research paper must carry both, and they're here so
 > you never rebuild them from memory at ship time.
 
@@ -65,7 +57,15 @@ your repo, not taken on faith.
 
 One short section at the bottom of the deployed paper: "Built on the FlyRank ML Internship
 dataset" **linking to https://flyrank.ai**. Crediting your data source is standard research
-practice — and it's on the capstone's required-section list, so a paper without it isn't done.
+practice — and it# Capstone Report — <your lane>
+
+- **Author:**
+- **Lane:**
+- **Repo:**
+- **Date:**
+
+> Copy this file to `work/capstone_report.md` and fill it in as you build. Sections 1–8
+> mirror the Pass / Needs-Work rubric axes, so nothing's on the capstone's required-section list, so a paper without it isn't done.
 
 ---
 
